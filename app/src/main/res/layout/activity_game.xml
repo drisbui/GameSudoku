@@ -19,7 +19,7 @@
 
     <TableLayout
         android:layout_width="350dp"
-        android:layout_height="350dp"
+        android:layout_height="wrap_content"
         android:background="#F2F2F2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
