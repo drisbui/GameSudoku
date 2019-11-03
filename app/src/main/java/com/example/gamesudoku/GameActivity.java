@@ -246,9 +246,9 @@ public class GameActivity extends AppCompatActivity implements CellGroupFragment
             String a=clickedCell.getText().toString();
             if(a.length()==0)
                 clickedCell.setBackground(getResources().getDrawable(R.drawable.table_border_cell));
-
         }catch (Exception ex)
         {
+
         }
 
         clickedGroup = groupId;
@@ -310,19 +310,15 @@ public class GameActivity extends AppCompatActivity implements CellGroupFragment
                 buttonCheckBoard.setVisibility(View.INVISIBLE);
             }
             else {
-
-
+                currentBoard.isBoardCell(number,row,column);
+                if (currentBoard.isBoardCell(number, row, column) == false) {
+                    clickedCell.setBackground(getResources().getDrawable(R.drawable.table_broder_cell_er));
+                } else
+                {
+                    clickedCell.setBackground(getResources().getDrawable(R.drawable.table_border_cell));
+                }
                 clickedCell.setText(String.valueOf(number));
                 currentBoard.setValue(row, column, number);
-                /*
-                if(currentBoard.isBoardCorrectCell()==false)
-                {
-                    clickedCell.setBackground(getResources().getDrawable(R.drawable.table_broder_cell_er));
-                }
-                else
-                 */
-                    clickedCell.setBackground(getResources().getDrawable(R.drawable.table_border_cell));
-
                 if (currentBoard.isBoardFull()) {
                     buttonCheckBoard.setVisibility(View.VISIBLE);
                 } else {

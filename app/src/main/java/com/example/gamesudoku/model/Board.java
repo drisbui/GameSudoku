@@ -2,9 +2,6 @@ package com.example.gamesudoku.model;
 
 import java.util.ArrayList;
 
-/**
- * Created by Knut on 22.11.2017.
- */
 
 public class Board {
     private int[][] gameCells = new int[9][9];
@@ -40,11 +37,13 @@ public class Board {
         return true;
     }
 
-
-    public boolean isBoardCorrectCell(int num,int kv,int vt)
+    public boolean isBoardCell(int num,int row,int col)
     {
-
-       return true;
+        for (int i = 0; i < 9; i++) {
+            if (gameCells[row][i]==num||gameCells[i][col]==num)
+                return false;
+        }
+        return true;
     }
     public boolean isBoardCorrect() {
         // Check horizontal
