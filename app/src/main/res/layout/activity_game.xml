@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:background="#C0E6E5"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".GameActivity">
+
+    <TextView
+        android:id="@+id/tvTimer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="00:00:00"
+        android:textAlignment="center"
+        android:textSize="24dp" />
+
+    <TableLayout
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:background="#F2F2F2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.091">
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <fragment
+                android:id="@+id/cellGroupFragment"
+                android:name="com.example.gamesudoku.fragments.CellGroupFragment"
+                android:layout_width="92dp"
+                android:layout_height="106dp"
+                android:layout_weight="1"
+                android:tag="0" />
+
+            <fragment
+                android:id="@+id/cellGroupFragment2"
+                android:name="com.example.gamesudoku.fragments.CellGroupFragment"
+                android:layout_width="92dp"
+                android:layout_height="106dp"
+                android:layout_weight="1"
+                android:tag="1" />
+
+            <fragment
+                android:id="@+id/cellGroupFragment3"
+                android:name="com.example.gamesudoku.fragments.CellGroupFragment"
+                android:layout_width="92dp"
+                android:layout_height="106dp"
+                android:layout_weight="1"
+                android:tag="2" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <fragment
+                android:id="@+id/cellGroupFragment4"
+                android:name="com.example.gamesudoku.fragments.CellGroupFragment"
+                android:layout_width="92dp"
+                android:layout_height="106dp"
+                android:layout_weight="1"
+                android:tag="3" />
+
+            <fragment
+                android:id="@+id/cellGroupFragment5"
+                android:name="com.example.gamesudoku.fragments.CellGroupFragment"
+                android:layout_width="92dp"
+                android:layout_height="106dp"
+                android:layout_weight="1"
+                android:tag="4" />
+
+            <fragment
+                android:id="@+id/cellGroupFragment6"
+                android:name="com.example.gamesudoku.fragments.CellGroupFragment"
+                android:layout_width="92dp"
+                android:layout_height="106dp"
+                android:layout_weight="1"
+                android:tag="5" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="117dp">
+
+            <fragment
+                android:id="@+id/cellGroupFragment7"
+                android:name="com.example.gamesudoku.fragments.CellGroupFragment"
+                android:layout_width="92dp"
+                android:layout_height="106dp"
+                android:layout_weight="1"
+                android:tag="6" />
+
+            <fragment
+                android:id="@+id/cellGroupFragment8"
+                android:name="com.example.gamesudoku.fragments.CellGroupFragment"
+                android:layout_width="92dp"
+                android:layout_height="106dp"
+                android:layout_weight="1"
+                android:tag="7" />
+
+            <fragment
+                android:id="@+id/cellGroupFragment9"
+                android:name="com.example.gamesudoku.fragments.CellGroupFragment"
+                android:layout_width="92dp"
+                android:layout_height="106dp"
+                android:layout_weight="1"
+                android:tag="8" />
+        </TableRow>
+
+    </TableLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#4CAF50"
+            android:onClick="onGoBackButtonClicked"
+            android:text="go back"
+            android:textColor="#fff"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.965"
+            tools:ignore="OnClick" />
+
+        <Button
+            android:id="@+id/buttonCheckBoard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:onClick="onCheckBoardButtonClicked"
+            android:text="check board"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.822" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="#03A9F4"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="#03A9F4"
+            android:text="2" />
+
+        <Button
+            android:id="@+id/btn3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="#03A9F4"
+            android:text="3" />
+
+        <Button
+            android:id="@+id/btn4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="#03A9F4"
+            android:text="4" />
+
+        <Button
+            android:id="@+id/btn5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="#03A9F4"
+            android:text="5" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="#03A9F4"
+            android:text="6" />
+
+        <Button
+            android:id="@+id/btn7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="#03A9F4"
+            android:text="7" />
+
+        <Button
+            android:id="@+id/btn8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="#03A9F4"
+            android:text="8" />
+
+        <Button
+            android:id="@+id/btn9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="#03A9F4"
+            android:text="9" />
+
+        <Button
+            android:id="@+id/btnDel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="#2196F3"
+            android:text="Del" />
+    </LinearLayout>
+</LinearLayout>
