@@ -36,6 +36,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 openNewGameDialog();
                 break;
             case R.id.btnAbout:
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setTitle("About");
+                builder.setMessage(R.string.about);
+                builder.setCancelable(false);
+                builder.setPositiveButton("Close", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
                 break;
             case  R.id.btnAchievements:
                 Intent intent=new Intent(MainActivity.this,AchievementActivity.class);

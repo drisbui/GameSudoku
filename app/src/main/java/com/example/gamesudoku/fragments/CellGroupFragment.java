@@ -39,7 +39,7 @@ public class CellGroupFragment extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_cell_group, container, false);
 
-        //Set textview click listeners
+        //khai báo textview mõi fram gắn sự kiện click listener
         int textViews[] = new int[]{R.id.textView1, R.id.textView2, R.id.textView3, R.id.textView4,
                          R.id.textView5, R.id.textView6, R.id.textView7, R.id.textView8, R.id.textView9};
         for (int textView1 : textViews) {

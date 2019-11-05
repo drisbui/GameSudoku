@@ -72,8 +72,8 @@ public class Board {
             }
         }
 
-        // Check each group is in CellGroupFragment class for easier code
-        // returns true if horizontal and vertical lines are correct
+        // Kiểm tra từng nhóm trong lớp CellgroupFragment để biết mã dễ dàng
+        // trả về true nếu các horizontal và vertical là chính xác
         return true;
     }
 

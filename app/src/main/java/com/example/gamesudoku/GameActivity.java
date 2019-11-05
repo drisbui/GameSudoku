@@ -112,7 +112,7 @@ public class GameActivity extends AppCompatActivity implements CellGroupFragment
             thisCellGroupFragment.setGroupId(i);
         }
 
-        //Appear all values from the current board
+        //các giá trị hiện tại board
         CellGroupFragment tempCellGroupFragment;
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
@@ -172,7 +172,7 @@ public class GameActivity extends AppCompatActivity implements CellGroupFragment
             Log.e(TAG, e.getMessage());
         }
 
-        //reading from internal storage (/data/data/<package-name>/files)
+        //đọc từ bộ nhớ trong (/data/data/<package-name>/files)
         String fileName = "boards-";
         if (difficulty == 0) {
             fileName += "easy";
@@ -191,7 +191,7 @@ public class GameActivity extends AppCompatActivity implements CellGroupFragment
             line = internalBufferedReader.readLine();
             while (line != null) {
                 Board board = new Board();
-                // read all lines in the board
+                // đọc tất cả các dòng trong bảng
                 for (int i = 0; i < 9; i++) {
                     String rowCells[] = line.split(" ");
                     for (int j = 0; j < 9; j++) {
