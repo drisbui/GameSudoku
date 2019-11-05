@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">GameSudoku</string>
     <string name="about">
-        version 1.0.0 \n
-        developed by Bui Thi Hoai Thuong and Nguyen Hai Nguyen \n
-        Description: Development of mobile device programming subjects \n
+        version 1.0.0\n
+        developed by Bui Thi Hoai Thuong and Nguyen Hai Nguyen\n
+        Description: Development of mobile device programming subjects\n
         grade: DHKTPM12CTT
     </string>
 </resources>

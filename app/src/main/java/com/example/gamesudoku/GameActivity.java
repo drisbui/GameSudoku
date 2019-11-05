@@ -258,7 +258,7 @@ public class GameActivity extends AppCompatActivity implements CellGroupFragment
         if (!isStartPiece(groupId, cellId)) {
             clickedCell.setBackground(getResources().getDrawable(R.drawable.table_border_cell_unsure));
         } else {
-            Toast.makeText(this, "Không được! đây là số mặt định", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Can not! This is the default number", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -275,54 +275,62 @@ public class GameActivity extends AppCompatActivity implements CellGroupFragment
             int row = ((clickedGroup - 1) / 3) * 3 + (clickedCellId / 3);
             int column = ((clickedGroup - 1) % 3) * 3 + ((clickedCellId) % 3);
             Button buttonCheckBoard = findViewById(R.id.buttonCheckBoard);
-            int number;
-            switch (view.getId())
-            {
-                case R.id.btn1:
-                    number=1;break;
-                case R.id.btn2:
-                    number=2;break;
-                case R.id.btn3:
-                    number=3;break;
-                case R.id.btn4:
-                    number=4;break;
-                case R.id.btn5:
-                    number=5;break;
-                case R.id.btn6:
-                    number=6;break;
-                case R.id.btn7:
-                    number=7;break;
-                case R.id.btn8:
-                    number=8;break;
-                case R.id.btn9:
-                    number=9;break;
-                case R.id.btnDel:
-                    number=0;break;
-                default:
-                    throw new IllegalStateException("Unexpected value: " + view.getId());
-            }
-
-            if(number==0)
-            {
-                clickedCell.setText("");
-                clickedCell.setBackground(getResources().getDrawable(R.drawable.table_border_cell));
-                currentBoard.setValue(row, column, 0);
-                buttonCheckBoard.setVisibility(View.INVISIBLE);
-            }
-            else {
-                currentBoard.isBoardCell(number,row,column);
-                if (currentBoard.isBoardCell(number, row, column) == false) {
-                    clickedCell.setBackground(getResources().getDrawable(R.drawable.table_broder_cell_er));
-                } else
-                {
-                    clickedCell.setBackground(getResources().getDrawable(R.drawable.table_border_cell));
+            if (!isStartPiece(clickedGroup, clickedCellId)) {
+                int number;
+                switch (view.getId()) {
+                    case R.id.btn1:
+                        number = 1;
+                        break;
+                    case R.id.btn2:
+                        number = 2;
+                        break;
+                    case R.id.btn3:
+                        number = 3;
+                        break;
+                    case R.id.btn4:
+                        number = 4;
+                        break;
+                    case R.id.btn5:
+                        number = 5;
+                        break;
+                    case R.id.btn6:
+                        number = 6;
+                        break;
+                    case R.id.btn7:
+                        number = 7;
+                        break;
+                    case R.id.btn8:
+                        number = 8;
+                        break;
+                    case R.id.btn9:
+                        number = 9;
+                        break;
+                    case R.id.btnDel:
+                        number = 0;
+                        break;
+                    default:
+                        throw new IllegalStateException("Unexpected value: " + view.getId());
                 }
-                clickedCell.setText(String.valueOf(number));
-                currentBoard.setValue(row, column, number);
-                if (currentBoard.isBoardFull()) {
-                    buttonCheckBoard.setVisibility(View.VISIBLE);
-                } else {
+
+                if (number == 0) {
+                    clickedCell.setText("");
+                    clickedCell.setBackground(getResources().getDrawable(R.drawable.table_border_cell));
+                    currentBoard.setValue(row, column, 0);
                     buttonCheckBoard.setVisibility(View.INVISIBLE);
+                } else {
+                    currentBoard.isBoardCell(number, row, column);
+                    if (currentBoard.isBoardCell(number, row, column) == false) {
+                        clickedCell.setBackground(getResources().getDrawable(R.drawable.table_broder_cell_er));
+                    } else {
+                        clickedCell.setBackground(getResources().getDrawable(R.drawable.table_border_cell));
+                    }
+                    clickedCell.setText(String.valueOf(number));
+                    currentBoard.setValue(row, column, number);
+                    if (currentBoard.isBoardFull()) {
+                        buttonCheckBoard.setVisibility(View.VISIBLE);
+                    } else {
+                        buttonCheckBoard.setVisibility(View.INVISIBLE);
+                    }
                 }
             }
         }
@@ -332,10 +340,10 @@ public class GameActivity extends AppCompatActivity implements CellGroupFragment
         currentBoard.isBoardCorrect();
         if(checkAllGroups() && currentBoard.isBoardCorrect()) {
             TimeStop();
-            Toast.makeText(this, "Bạn đã hoàn thành", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "You have completed", Toast.LENGTH_SHORT).show();
             displayAlertDialog();
         } else {
-            Toast.makeText(this, "Lời giải không chính xác", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "The solution is incorrect", Toast.LENGTH_SHORT).show();
         }
     }
 
