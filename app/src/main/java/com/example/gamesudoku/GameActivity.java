@@ -2,6 +2,7 @@ package com.example.gamesudoku;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.Constraints;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -16,6 +17,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -250,7 +253,6 @@ public class GameActivity extends AppCompatActivity implements CellGroupFragment
         {
 
         }
-
         clickedGroup = groupId;
         clickedCellId = cellId;
         clickedCell = (TextView) view;
@@ -262,7 +264,7 @@ public class GameActivity extends AppCompatActivity implements CellGroupFragment
         }
     }
 
-
+    //Kiểm tra phải số mặt định không
     private boolean isStartPiece(int group, int cell) {
         int row = ((group-1)/3)*3 + (cell/3);
         int column = ((group-1)%3)*3 + ((cell)%3);
@@ -358,9 +360,6 @@ public class GameActivity extends AppCompatActivity implements CellGroupFragment
         handler.postDelayed(runnable, 0);
     }
 
-
-
-
     public void TimeStop()
     {
        if(!isRun) return;
@@ -369,7 +368,7 @@ public class GameActivity extends AppCompatActivity implements CellGroupFragment
        handler.removeCallbacks(runnable);
 
     }
-
+    // ----------------------
     public void displayAlertDialog() {
         LayoutInflater inflater = getLayoutInflater();
         View alertLayout = inflater.inflate(R.layout.layout_custom_dialog, null);
@@ -402,8 +401,9 @@ public class GameActivity extends AppCompatActivity implements CellGroupFragment
                 if(edName.getText().toString()=="") {
                     edName.setText("no name");
                 }
+                // Lưu vào db
                 Achievements achievements = new Achievements(edName.getText().toString(),txtTimer.getText().toString(),s);
-                if(dbManager.addAchievements(achievements))
+                if(dbManager.addAchievements(achievements))//lưu
                 {
                     Toast.makeText(GameActivity.this,"Lưu thành công",Toast.LENGTH_LONG).show();
                 }

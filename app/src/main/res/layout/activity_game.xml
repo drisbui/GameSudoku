@@ -18,9 +18,11 @@
         android:textSize="24dp" />
 
     <TableLayout
+        android:id="@+id/layoutTab"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:background="#F2F2F2"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -150,6 +152,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.822" />
+
     </LinearLayout>
 
     <LinearLayout

@@ -36,7 +36,7 @@ public class Board {
         }
         return true;
     }
-
+    // kiểm tra trùng khi nhập
     public boolean isBoardCell(int num,int row,int col)
     {
         for (int i = 0; i < 9; i++) {
@@ -81,6 +81,7 @@ public class Board {
         return gameCells[row][column];
     }
 
+    // Tạo sudoku mới
     @Override
     public String toString() {
         StringBuilder temp = new StringBuilder();

@@ -26,6 +26,7 @@ public class AchievementActivity extends AppCompatActivity {
         setContentView(R.layout.activity_achievement);
         btnBack=(Button)findViewById(R.id.btnBack);
         DBManager dbManager=new DBManager(this);
+        //doc du lieu
         ArrayList<Achievements> arrayList=dbManager.getAllAchievements();
         gridView=(GridView) findViewById(R.id.gridViewA);
         final AchievementAdapter adapter=new AchievementAdapter(AchievementActivity.this,arrayList);
